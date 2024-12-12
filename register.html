@@ -1,0 +1,51 @@
+<!-- Registration Form -->
+<form action="register.php" method="POST" onsubmit="showSuccessPopup(event)">
+  <div class="mb-3">
+    <label for="registerUsername" class="form-label">Username</label>
+    <input type="text" class="form-control" id="registerUsername" name="username" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+  <div class="mb-3">
+    <label for="registerPassword" class="form-label">Password</label>
+    <input type="password" class="form-control" id="registerPassword" name="password" required>
+  </div>
+  <button type="submit" class="btn btn-success w-100">Register</button>
+</form>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="successModalLabel">Registration Successful</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        You have successfully registered!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function showSuccessPopup(event) {
+    // Prevent form submission for demo purposes
+    event.preventDefault();
+
+    // Show the success modal
+    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    successModal.show();
+
+    // Optionally, redirect after a delay (uncomment the lines below)
+    // setTimeout(() => {
+    //   window.location.href = 'login.php'; // Change this to your desired redirect page
+    // }, 3000);
+  }
+</script>
